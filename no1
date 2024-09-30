@@ -1,0 +1,29 @@
+program HitungDiskon;
+
+uses crt;
+
+var
+  totalBelanja, diskon, totalBayar: real;
+
+begin
+  clrscr;
+  
+  writeln('Masukkan total belanja: ');
+  readln(totalBelanja);
+  
+  if totalBelanja < 100000 then
+    diskon := 0
+  else if (totalBelanja >= 100000) and (totalBelanja <= 499999) then
+    diskon := 0.1 * totalBelanja
+  else if (totalBelanja >= 500000) and (totalBelanja <= 999999) then
+    diskon := 0.2 * totalBelanja
+  else
+    diskon := 0.3 * totalBelanja;
+  
+  totalBayar := totalBelanja - diskon;
+  
+  writeln('Diskon: ', diskon:0:2);
+  writeln('Total yang harus dibayar: ', totalBayar:0:2);
+  
+  readln;
+end.
